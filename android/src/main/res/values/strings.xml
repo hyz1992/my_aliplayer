@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="alivc_player_settings_title">Player Settings</string>
+    <string name="alivc_error_msg">Error message</string>
+    <string name="alivc_error_code">Error code:</string>
+    <string name="alivc_retry">Retry</string>
+
+
+    <string name="alivc_net_disable">The network is unreachable, please check network and replay latter</string>
+    <string name="alivc_net_state_mobile">The current network is cell-network, whether to continue?</string>
+    <string name="alivc_net_state_mobile_yes">Resume</string>
+    <string name="alivc_net_state_mobile_no">Exit</string>
+    <string name="alivc_alivc_replay_msg">Video ended</string>
+    <string name="alivc_replay">Replay</string>
+    <string name="alivc_loading">Loading...</string>
+    <string name="alivc_loading_tips">Video is loading...</string>
+
+
+
+    <string name="alivc_speed_one_times">Normal</string>
+    <string name="alivc_speed_optf_times">1.25X</string>
+    <string name="alivc_speed_opt_times">1.5X</string>
+    <string name="alivc_speed_twice_times">2.0X</string>
+    <string name="alivc_speed_mode">Fast Speed Play</string>
+    <string name="alivc_speed_tips">the current video has switched to %1$s speed rate</string>
+    <string name="alivc_left_side">left side</string>
+    <string name="alivc_brightness">brightness</string>
+    <string name="alivc_control">&#160;control</string>
+    <string name="alivc_center">center</string>
+    <string name="alivc_progress">progress</string>
+    <string name="alivc_right_side">right side</string>
+    <string name="alivc_volume">volume</string>
+
+    <string name="input_vid_here">Please input vid here</string>
+    <string name="inout_accesskeyid_here">input accesskeyId here </string>
+    <string name="input_accesskeysecret_here">input accesskeySecret here</string>
+    <string name="input_securitytoken_here">input securityToken here </string>
+    <string name="input_url_here">input url here </string>
+    <string name="start_player_ui">Open UI of player</string>
+    <string name="start_player_setting">Setting</string>
+    <string name="request_vidsts_fail">Request a vidsts failed</string>
+    <string name="play_url_null_toast">Play video URL cannot be null</string>
+    <string name="clear_logs">clear logs</string>
+
+    <string name="player_log">Player Logs：</string>
+    <string name="log_start_get_data">&#160;start to get a streaming</string>
+    <string name="log_strart_play">&#160;start to play</string>
+    <string name="log_prepare_success"> &#160;prepared successfully</string>
+    <string name="toast_prepare_success">Prepared successfully</string>
+    <string name="log_play_completion">&#160;video ended</string>
+    <string name="toast_play_compleion">video ended</string>
+    <string name="log_player_create_success"> &#160;create a player successfully</string>
+    <string name="log_open_url_success"> &#160;open an url successfully</string>
+    <string name="log_request_stream_success"> &#160;get a streaming successfully</string>
+    <string name="log_start_open_stream"> &#160;start to open a streaming</string>
+    <string name="log_first_frame_played"> &#160;the first frame showed</string>
+    <string name="log_seek_completed">&#160;seek operation completed</string>
+    <string name="log_play_stopped">&#160;play operation stopped</string>
+    <string name="log_seek_start">&#160;seek operation started</string>
+    <string name="log_change_quality_success">&#160;Video quality switched successfully</string>
+    <string name="log_change_quality_fail">&#160;Video quality switched unsuccessfully</string>
+
+    <string name="alivc_checkbox_all_select">Select All</string>
+    <string name="alivc_download_delete">Delete</string>
+    <string name="alivc_download_edit">Edit</string>
+
+    <string name="prepare_download_item">To prepare download-item</string>
+    <string name="add_to_download">To add</string>
+    <string name="no_download_right">No permission for downloading</string>
+    <string name="encrypted">Encrypted</string>
+    <string name="encrypted_no">Unencrypted</string>
+    <string name="choose_a_definition_to_download">Please choose a definition to download</string>
+    <string name="choose_downloaditem">Choose download item</string>
+    <string name="choose_download_sharpness">Choose download sharpness</string>
+    <string name="already_downloaded">Already Downloaded</string>
+    <string name="download_caching">Caching</string>
+    <string name="download_prepare">preparing</string>
+    <string name="download_wait">waiting</string>
+    <string name="download_downloading">downloading</string>
+    <string name="download_pause">pausing</string>
+    <string name="download_error">error</string>
+    <string name="download_no_downloaded">You haven’t downloaded the video yet</string>
+    <string name="download_no_downloaded_tips">You can click the download button to add video</string>
+    <string name="alivc_delete_confirm">Do you want to delete the selected video?</string>
+    <string name="alivc_start_download">start download</string>
+    <string name="alivc_native_video">native video</string>
+
+    <string name="alivc_check_list_close">Close</string>
+    <string name="kickbt">Ok</string>
+    <string name="kickalert">你被主播移出直播间，请注意言行！</string>
+
+    <string name="alivc_download_video">download video</string>
+
+    <string name="alivc_dialog_sure">Ok</string>
+    <string name="alivc_dialog_cancle">Cancle</string>
+    <string name="slivc_not_support_url">not support url download...</string>
+
+    <string name="alivc_speed">speed</string>
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alivc_player_settings_title">播放设置</string>
+    <string name="alivc_error_msg">错误消息</string>
+    <string name="alivc_error_code">错误码:</string>
+    <string name="alivc_retry">重试</string>
+
+
+    <string name="alivc_net_disable">无网络连接，检查网络后点击重新播放</string>
+    <string name="alivc_net_state_mobile">当前为移动网络，请点击播放</string>
+    <string name="alivc_net_state_mobile_yes">继续播放</string>
+    <string name="alivc_net_state_mobile_no">退出播放</string>
+    <string name="alivc_alivc_replay_msg">视频播放结束</string>
+    <string name="alivc_replay">重播</string>
+    <string name="alivc_loading">视频正在加载中..</string>
+    <string name="alivc_loading_tips">视频正在加载中...</string>
+
+    <string name="alivc_speed_one_times">正常</string>
+    <string name="alivc_speed_optf_times">1.25倍速</string>
+    <string name="alivc_speed_opt_times">1.5倍速</string>
+    <string name="alivc_speed_twice_times">2.0倍速</string>
+    <string name="alivc_speed_mode">倍速播放</string>
+    <string name="alivc_speed_tips">当前视频已切换为%1$s播放</string>
+    <string name="alivc_left_side">左侧</string>
+    <string name="alivc_brightness">亮度</string>
+    <string name="alivc_control">调节</string>
+    <string name="alivc_center">中心</string>
+    <string name="alivc_progress">进度</string>
+    <string name="alivc_right_side">右侧</string>
+    <string name="alivc_volume">音量</string>
+
+    <string name="input_vid_here">这里输入视频vid</string>
+    <string name="inout_accesskeyid_here">这里输入临时accesskeyId</string>
+    <string name="input_accesskeysecret_here">这里输入临时accesskeySecret</string>
+    <string name="input_securitytoken_here">这里输入临时securityToken</string>
+    <string name="input_url_here">请输入URL </string>
+    <string name="start_player_ui">开启播放界面</string>
+    <string name="start_player_setting">vid或url设置</string>
+    <string name="request_vidsts_fail">通过网络请求vidsts失败</string>
+    <string name="play_url_null_toast">播放Url不能为空</string>
+    <string name="clear_logs">清除日志</string>
+
+    <string name="player_log">播放器日志：</string>
+    <string name="log_start_get_data">&#160;准备请求码流</string>
+    <string name="log_strart_play">&#160;开始请求播放</string>
+    <string name="toast_prepare_success">准备成功</string>
+    <string name="log_prepare_success">&#160;准备成功</string>
+    <string name="log_play_completion">&#160;播放结束</string>
+    <string name="toast_play_compleion">播放结束</string>
+    <string name="log_player_create_success">&#160;播放创建成功</string>
+    <string name="log_open_url_success">&#160;url请求成功</string>
+    <string name="log_request_stream_success">&#160;请求流成功</string>
+    <string name="log_start_open_stream">&#160;开始传输码流</string>
+    <string name="log_first_frame_played">&#160;第一帧播放完成</string>
+    <string name="log_seek_completed">&#160;seek结束</string>
+    <string name="log_play_stopped">&#160;播放停止</string>
+    <string name="log_seek_start">&#160;seek开始</string>
+    <string name="log_change_quality_success">&#160;切换清晰度成功</string>
+    <string name="log_change_quality_fail">&#160;切换清晰度失败</string>
+
+    <string name="alivc_checkbox_all_select">全选</string>
+    <string name="alivc_download_delete">删除</string>
+    <string name="alivc_download_edit">编辑</string>
+
+    <string name="prepare_download_item">准备可下载项</string>
+    <string name="add_to_download">添加下载</string>
+    <string name="no_download_right">无权限下载</string>
+    <string name="encrypted">加密</string>
+    <string name="encrypted_no">未加密</string>
+    <string name="choose_a_definition_to_download">请选择一个清晰度进行下载</string>
+    <string name="choose_downloaditem">选择下载项</string>
+    <string name="choose_download_sharpness">选择清晰度</string>
+    <string name="already_downloaded">已缓存</string>
+    <string name="download_caching">正在缓存</string>
+    <string name="download_prepare">准备中</string>
+    <string name="download_wait">等待中</string>
+    <string name="download_downloading">下载中</string>
+    <string name="download_pause">暂停中</string>
+    <string name="download_error">下载出错</string>
+    <string name="alivc_delete_confirm">确认删除选择的视频吗？</string>
+    <string name="download_no_downloaded">你还没有离线视频</string>
+    <string name="download_no_downloaded_tips">可点击下载按钮添加视频</string>
+    <string name="alivc_start_download">开始下载</string>
+    <string name="alivc_native_video">离线视频</string>
+    <string name="alivc_download_video">视频下载</string>
+
+    <string name="alivc_check_list_close">关闭</string>
+    <string name="kickbt">我知道了</string>
+    <string name="kickalert">你被主播移出直播间，请注意言行！</string>
+
+    <string name="alivc_dialog_sure">确定</string>
+    <string name="alivc_dialog_cancle">取消</string>
+    
+    <string name="slivc_not_support_url">不支持Url播放类型下载...</string>
+
+    <string name="alivc_speed">倍速播放</string>
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/alivc_color_player_setting_background"
+    android:gravity="center">
+
+    <include layout="@layout/action_top_bar"/>
+
+    <FrameLayout
+        android:id="@+id/tab_layout"
+        android:layout_below="@id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_tab_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/alivc_color_player_tab_defaut"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- tab1 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/tv_vidplay"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="vid 播放"
+                    android:textColor="@color/alivc_white"
+                    android:textSize="16sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_vidplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:background="@drawable/alivc_solution_tab_item_selector"/>
+            </FrameLayout>
+            <!-- tab2 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/tv_urlplay"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="URL 播放"
+                    android:textColor="@color/alivc_white"
+                    android:textSize="16sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_urlplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/alivc_solution_tab_item_selector"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/player_settings_content"
+        android:layout_below="@id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"  />
+
+    <Button
+        android:id="@+id/btn_start_player"
+        style="@style/btn_style"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_player_ui" />
+</RelativeLayout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/add_download_info_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/add_download_info_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_weight="1"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_download"
+                android:layout_width="0dp"
+                android:drawableTop="@drawable/alivc_download_downloading"
+                android:text="下载"
+                android:gravity="center"
+                android:textColor="@color/alivc_white"
+                android:layout_height="match_parent"
+                android:drawablePadding="6dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/alivc_more_features_font"
+                />
+
+            <TextView
+                android:id="@+id/tv_cast_screen"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/alivc_screen_cast"
+                android:text="投屏"
+                android:gravity="center"
+                android:drawablePadding="6dp"
+                android:textSize="@dimen/alivc_more_features_font"
+                android:textColor="@color/alivc_white"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_barrage"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/alivc_barrage"
+                android:text="弹幕设置"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:textSize="@dimen/alivc_more_features_font"
+                android:textColor="@color/alivc_white"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+         <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="15dp" android:layout_marginTop="8dp"
+           android:orientation="horizontal">
+
+           <View
+               android:layout_width="0dp"
+               android:layout_height="0.5dp"
+               android:layout_gravity="center"
+               android:layout_weight="1"
+               android:background="@color/alivc_color_gray" />
+
+           <TextView
+               android:id="@+id/tv_action_title"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingLeft="5dp"
+               android:paddingRight="5dp"
+               android:text="@string/alivc_speed"
+               android:textColor="@color/alivc_white"
+               android:textSize="12sp" />
+
+           <View
+               android:layout_width="0dp"
+               android:layout_height="0.5dp"
+               android:layout_gravity="center"
+               android:layout_weight="1"
+               android:background="@color/alivc_color_gray" />
+
+       </LinearLayout>
+        <RadioGroup
+            android:id="@+id/alivc_rg_speed"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:layout_height="wrap_content"
+            >
+            <RadioButton
+                android:id="@+id/rb_speed_normal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="1.0X"
+                android:gravity="center"
+                android:textColor="@color/alivc_speed_text_color_blue"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_speed_onequartern"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:gravity="center"
+                android:text="1.25X"
+                android:textColor="@color/alivc_speed_text_color_blue"
+                />
+            <RadioButton
+                android:id="@+id/rb_speed_onehalf"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:gravity="center"
+                android:text="1.5X"
+                android:textColor="@color/alivc_speed_text_color_blue"
+                />
+            <RadioButton
+                android:id="@+id/rb_speed_twice"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="2.0X"
+                android:gravity="center"
+                android:textColor="@color/alivc_speed_text_color_blue"
+                />
+        </RadioGroup>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:background="@color/alivc_color_gray" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="vertical"
+           android:layout_weight="1"
+           android:layout_height="wrap_content">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:paddingLeft="32dp"
+               android:paddingRight="32dp"
+               android:paddingTop="16dp"
+               android:paddingBottom="16dp"
+               android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/alivc_dialog_voice_down"
+                    android:layout_height="wrap_content" />
+
+               <android.support.v7.widget.AppCompatSeekBar
+                   android:id="@+id/seek_voice"
+                   android:layout_width="0dp"
+                   android:layout_gravity="center"
+                   android:paddingTop="6dp"
+                   android:paddingBottom="6dp"
+                   android:layout_marginLeft="8dp"
+                   android:layout_marginRight="8dp"
+                   android:layout_weight="1"
+                   style="@style/alivc_info_seekbar_blue_voice"
+                   android:layout_height="wrap_content" />
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:src="@drawable/alivc_dialog_voice_up"
+                   android:layout_height="wrap_content" />
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:paddingLeft="32dp"
+               android:paddingRight="32dp"
+               android:paddingTop="16dp"
+               android:paddingBottom="16dp"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:src="@drawable/alivc_light_down"
+                   android:layout_height="wrap_content" />
+
+               <android.support.v7.widget.AppCompatSeekBar
+                   android:id="@+id/seek_light"
+                   android:layout_gravity="center"
+                   android:layout_width="0dp"
+                   android:paddingTop="6dp"
+                   android:paddingBottom="6dp"
+                   android:layout_marginLeft="8dp"
+                   android:layout_marginRight="8dp"
+                   android:layout_weight="1"
+                   style="@style/alivc_info_seekbar_blue_light"
+                   android:layout_height="wrap_content" />
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:src="@drawable/alivc_light_up"
+                   android:layout_height="wrap_content" />
+           </LinearLayout>
+       </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

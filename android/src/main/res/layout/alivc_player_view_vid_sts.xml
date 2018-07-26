@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="30dp"
+            android:text="vid"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/vid"
+            style="@style/edit_line_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/white"
+            android:hint="@string/input_vid_here"
+            android:text="6e783360c811449d8692b2117acc9212"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sts_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="30dp"
+                android:text="AccessKeyId"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/akId"
+                style="@style/edit_line_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:hint="@string/inout_accesskeyid_here"
+                android:text="" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="AccessKeySecret"
+                android:layout_marginLeft="30dp"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/akSecret"
+                style="@style/edit_line_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:hint="@string/input_accesskeysecret_here"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="SecurityToken"
+                android:layout_marginLeft="30dp"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/scuToken"
+                style="@style/edit_5line_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:lines="5"
+                android:maxLines="5"
+                android:gravity="top|left"
+                android:hint="@string/input_securitytoken_here"
+                android:text="" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
