@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.SurfaceTexture;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.Surface;
@@ -427,6 +428,13 @@ public class MyVideoPlayer {
     void initSurface(final SurfaceTexture surfaceTexture){
         surface = new Surface(surfaceTexture);
         mAliyunVodPlayer.setSurface(surface);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mAliyunVodPlayer.setSurface(surface);
+            }
+        },1000);
     }
 
     /**

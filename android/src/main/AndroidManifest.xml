@@ -14,11 +14,11 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
-            <intent-filter>
-                <action android:name="com.hyz.myaliplayer.player"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
+        </activity>
+        <activity android:name="com.hyz.testActivity.TestVideo"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
     </application>
 </manifest>

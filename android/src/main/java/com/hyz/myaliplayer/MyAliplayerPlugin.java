@@ -3,6 +3,7 @@ package com.hyz.myaliplayer;
 import android.content.Intent;
 import android.os.Environment;
 import com.aliyun.vodplayer.media.IAliyunVodPlayer;
+import com.hyz.testActivity.TestVideo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,7 +48,7 @@ public class MyAliplayerPlugin implements MethodCallHandler {
                 videoPlayers.clear();
                 break;
             case "openVideoActivity":{
-                Intent intent = new Intent(registrar.activity(),MySimpleVideo.class);
+                Intent intent = new Intent(registrar.activity(),TestVideo.class);
                 this.registrar.activity().startActivity(intent);
                 break;
             }
