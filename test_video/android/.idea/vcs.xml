@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../../android" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../build/app" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../build/my_aliplayer" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../build/path_provider" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../build/shared_preferences" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../build/video_player" vcs="svn" />
+  </component>
+</project>

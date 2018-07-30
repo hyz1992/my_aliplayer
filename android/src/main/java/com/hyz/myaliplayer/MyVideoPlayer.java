@@ -33,6 +33,7 @@ public class MyVideoPlayer {
     private AliyunMediaInfo mAliyunMediaInfo;
     //整体缓冲进度
     private int mCurrentBufferPercentage = 0;
+    private SurfaceTexture surfaceTexture;
     private Surface surface;
     private Context context;
     private TextureRegistry.SurfaceTextureEntry textureEntry;
@@ -426,15 +427,15 @@ public class MyVideoPlayer {
     }
 
     void initSurface(final SurfaceTexture surfaceTexture){
+        this.surfaceTexture = surfaceTexture;
         surface = new Surface(surfaceTexture);
         mAliyunVodPlayer.setSurface(surface);
+    }
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mAliyunVodPlayer.setSurface(surface);
-            }
-        },1000);
+    void resetSurfaceTextureSize(){
+        int width = this.getVideoWidth();
+        int height = this.getVideoHeight();
+        this.surfaceTexture.setDefaultBufferSize(width,height);
     }
 
     /**
@@ -794,10 +795,6 @@ public class MyVideoPlayer {
     }
 
     long getPosition(){
-        long ret = mAliyunVodPlayer.getCurrentPosition();
-        int duration = this.getDuration();
-        int width = this.getVideoWidth();
-        int height = this.getVideoHeight();
         return mAliyunVodPlayer.getCurrentPosition();
     }
 }

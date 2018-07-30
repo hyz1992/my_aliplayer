@@ -3,7 +3,6 @@ package com.hyz.myaliplayer;
 import android.content.Intent;
 import android.os.Environment;
 import com.aliyun.vodplayer.media.IAliyunVodPlayer;
-import com.hyz.testActivity.TestVideo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -48,7 +47,7 @@ public class MyAliplayerPlugin implements MethodCallHandler {
                 videoPlayers.clear();
                 break;
             case "openVideoActivity":{
-                Intent intent = new Intent(registrar.activity(),TestVideo.class);
+                Intent intent = new Intent(registrar.activity(),MySimpleVideo.class);
                 this.registrar.activity().startActivity(intent);
                 break;
             }
@@ -118,6 +117,7 @@ public class MyAliplayerPlugin implements MethodCallHandler {
             eventSink.success(event);
         }
     }
+
     private void initPlayerCallback(final MyVideoPlayer player){
         String sdDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/test_save_cache";
         player.setPlayingCache(true, sdDir, 60 * 60 /*时长, s */, 300 /*大小，MB*/);
@@ -125,6 +125,7 @@ public class MyAliplayerPlugin implements MethodCallHandler {
             @Override
             public void onPrepared() {
                 sendInitialized(player,player.eventSink);
+                player.resetSurfaceTextureSize();
             }
         });
     }
