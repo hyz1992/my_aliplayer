@@ -436,9 +436,11 @@ class VideoPlayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return controller._textureId == null
-        ? new Container(color: Colors.red,)
-        : new Texture(textureId: controller._textureId);
+    if(controller._textureId == null){
+      return new Container(color: Colors.red,);
+    }else{
+      return new Texture(textureId: controller._textureId);
+    }
   }
 }
 

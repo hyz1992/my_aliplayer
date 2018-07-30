@@ -51,33 +51,39 @@ class _MyHomePageState extends State<MyHomePage> {
                   setState(() {});
                 },
                 child: new Text(
-                  _index==0?"官方播放器:":"阿里播放器:"
+                  _index==0?"当前为官方播放器:":"当前为阿里播放器:"
                 ),
               ),
             ),
-            new LimitedBox(
-              maxHeight: myUtils.getLogicHeight(700.0),
-              // maxWidth: 800.0,
-              child: _buildContent()
+            new Container(
+              child:new LimitedBox(
+                maxHeight: myUtils.getLogicHeight(700.0),
+                child: _buildContent()
+              ),
+              color: _index==0?Colors.green:Colors.yellow,
+              padding: new EdgeInsets.all(10.0),
             )
           ],
         ),
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: (){
+          ///直接打开Android端阿里云视频播放
           MyAliplayer.openVideoActivity();
         },
-        child: new Text("原生"),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        child: new Text("原生\n阿里"),
+      ), 
     );
   }
 
   Widget _buildContent(){
     return _index==0?
+        //官方video_player,使用的exoPlayer
         new MyVideoPlayer(
           url: "http://hxzhex.zstarpoker.com/sv/c3fa555-164b680cc94/c3fa555-164b680cc94.mp4",
           videoThumb: "http://hxzhex.zstarpoker.com/1a7ccd9340b843a0ba00e41b26443363/covers/3a7c042b93b04a6f8425c5d1c0de43e2-00003.jpg",
         ):
+        //模仿官方video_player控件，使用的阿里云视频api
         new MyAliVideoPlayer(
           url: "http://hxzhex.zstarpoker.com/sv/c3fa555-164b680cc94/c3fa555-164b680cc94.mp4",
           videoThumb: "http://hxzhex.zstarpoker.com/1a7ccd9340b843a0ba00e41b26443363/covers/3a7c042b93b04a6f8425c5d1c0de43e2-00003.jpg",

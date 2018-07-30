@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_aliplayer/my_aliplayer.dart';
+// import 'package:my_aliplayer/my_aliplayer.dart';
 ///插件代码没有代码语法提示
 ///直接拷贝插件源码到本地,写完再拷贝回去
-// import 'package:test_video/my_aliplayer_xx.dart';
+import 'package:test_video/my_aliplayer_xx.dart';
 import 'package:test_video/util/utils.dart';
 
 import 'dart:async';

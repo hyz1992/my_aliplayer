@@ -990,7 +990,7 @@ public class AliyunVodPlayerView extends RelativeLayout implements ITheme {
             @Override
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
                 VcPlayerLog.d(TAG, " surfaceCreated = surfaceHolder = " + surfaceHolder);
-                mAliyunVodPlayer.setDisplay(surfaceHolder);
+                mAliyunVodPlayer.setSurface(surfaceHolder.getSurface());
             }
 
             @Override
@@ -1259,7 +1259,7 @@ public class AliyunVodPlayerView extends RelativeLayout implements ITheme {
                 }
             }
         });
-        mAliyunVodPlayer.setDisplay(mSurfaceView.getHolder());
+//        mAliyunVodPlayer.setSurface(mSurfaceView.getHolder().getSurface());
     }
 
     /**

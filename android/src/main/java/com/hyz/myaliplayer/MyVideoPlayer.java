@@ -10,28 +10,15 @@ import android.text.TextUtils;
 import android.view.Surface;
 
 import com.alivc.player.AliyunErrorCode;
-import com.alivc.player.VcPlayerLog;
 import com.aliyun.vodplayer.media.AliyunLocalSource;
 import com.aliyun.vodplayer.media.AliyunMediaInfo;
 import com.aliyun.vodplayer.media.AliyunPlayAuth;
 import com.aliyun.vodplayer.media.AliyunVidSts;
 import com.aliyun.vodplayer.media.AliyunVodPlayer;
 import com.aliyun.vodplayer.media.IAliyunVodPlayer;
-import com.aliyun.vodplayerview.constants.PlayParameter;
 import com.aliyun.vodplayerview.utils.NetWatchdog;
-import com.aliyun.vodplayerview.view.control.ControlView;
-import com.aliyun.vodplayerview.view.interfaces.ViewAction;
-import com.aliyun.vodplayerview.widget.AliyunVodPlayerView;
-
-import java.lang.ref.WeakReference;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import io.flutter.plugin.common.EventChannel;
-import io.flutter.plugin.common.MethodChannel;
 import io.flutter.view.TextureRegistry;
 
 /**
@@ -47,7 +34,7 @@ public class MyVideoPlayer {
     private int mCurrentBufferPercentage = 0;
     private Surface surface;
     private Context context;
-    private final TextureRegistry.SurfaceTextureEntry textureEntry;
+    private TextureRegistry.SurfaceTextureEntry textureEntry;
     public EventChannel.EventSink eventSink;
     private final EventChannel eventChannel;
     //网络状态监听
@@ -437,7 +424,7 @@ public class MyVideoPlayer {
 
     }
 
-    void initSurface(SurfaceTexture surfaceTexture){
+    void initSurface(final SurfaceTexture surfaceTexture){
         surface = new Surface(surfaceTexture);
         mAliyunVodPlayer.setSurface(surface);
     }
@@ -450,17 +437,20 @@ public class MyVideoPlayer {
         mNetWatchdog.setNetChangeListener(new NetWatchdog.NetChangeListener(){
             @Override
             public void onWifiTo4G(){
-                mNetChangeListener.onWifiTo4G();
+                if(mNetChangeListener!=null)
+                    mNetChangeListener.onWifiTo4G();
             }
 
             @Override
             public void on4GToWifi() {
-                mNetChangeListener.on4GToWifi();
+                if(mNetChangeListener!=null)
+                    mNetChangeListener.on4GToWifi();
             }
 
             @Override
             public void onNetDisconnected() {
-                mNetChangeListener.onNetDisconnected();
+                if(mNetChangeListener!=null)
+                    mNetChangeListener.onNetDisconnected();
             }
         });
         mNetWatchdog.setNetConnectedListener(new NetWatchdog.NetConnectedListener(){
@@ -478,6 +468,8 @@ public class MyVideoPlayer {
                 }
             }
         });
+        mNetWatchdog.startWatch();
+
     }
 
     public void setNetConnectedListener (NetWatchdog.NetConnectedListener listener) {
@@ -583,23 +575,18 @@ public class MyVideoPlayer {
      *
      * @param aliyunLocalSource 本地播放源
      */
-    public void setLocalSource(AliyunLocalSource aliyunLocalSource) {
+    private void setLocalSource(AliyunLocalSource aliyunLocalSource) {
         if (mAliyunVodPlayer == null) {
             return;
         }
-
         clearAllSource();
         stop();
 
         mAliyunLocalSource = aliyunLocalSource;
-
-
         if (NetWatchdog.is4GConnected(this.context)) {
 
-        } else {
-            prepareLocalSource(aliyunLocalSource);
         }
-
+        prepareLocalSource(aliyunLocalSource);
     }
     /**
      * prepare本地播放源
@@ -615,7 +602,7 @@ public class MyVideoPlayer {
      *
      * @param vidSts 源
      */
-    public void setVidSts(AliyunVidSts vidSts) {
+    private void setVidSts(AliyunVidSts vidSts) {
         if (mAliyunVodPlayer == null) {
             return;
         }
@@ -628,9 +615,8 @@ public class MyVideoPlayer {
 
         if (NetWatchdog.is4GConnected(this.context)) {
 
-        } else {
-            prepareVidsts(vidSts);
         }
+        prepareVidsts(vidSts);
     }
 
     /**
@@ -641,6 +627,35 @@ public class MyVideoPlayer {
     private void prepareVidsts(AliyunVidSts vidSts) {
 
         mAliyunVodPlayer.prepareAsync(vidSts);
+    }
+    /**
+     * 通过url播放
+     * @param url
+     */
+    public void setPlaySource(String url){
+        AliyunLocalSource.AliyunLocalSourceBuilder alsb = new AliyunLocalSource.AliyunLocalSourceBuilder();
+        alsb.setSource(url);
+        Uri uri = Uri.parse(url);
+        if ("rtmp".equals(uri.getScheme())) {
+            alsb.setTitle("");
+        }
+        AliyunLocalSource localSource = alsb.build();
+        setLocalSource(localSource);
+    }
+    /**
+     * 通过vid播放
+     * @param vid
+     * @param akId
+     * @param akSecre
+     * @param scuToken
+     */
+    public void setPlaySource(String vid,String akId,String akSecre,String scuToken){
+        AliyunVidSts vidSts = new AliyunVidSts();
+        vidSts.setVid(vid);
+        vidSts.setAcId(akId);
+        vidSts.setAkSceret(akSecre);
+        vidSts.setSecurityToken(scuToken);
+        setVidSts(vidSts);
     }
 
     void dispose(){
@@ -656,6 +671,10 @@ public class MyVideoPlayer {
         if (mAliyunVodPlayer != null) {
             mAliyunVodPlayer.release();
         }
+        if (mNetWatchdog != null) {
+            mNetWatchdog.stopWatch();
+        }
+        mNetWatchdog = null;
     }
     /**
      * 设置循环播放
