@@ -9,7 +9,4 @@ ndk{
 }
 调试dart时，注释该代码。
 
-不然就会报缺失libflutter.so的崩溃，我Android不熟，不太明白原因。
-
-## 目前最待解决的bug
-使用Surface、Texture将阿里播放器集成为flutter控件时，只有声音，没有图像
+不然就会报缺失libflutter.so的崩溃。
