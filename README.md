@@ -14,4 +14,5 @@ ndk{
 }
 调试dart时，注释该代码。
 
-不然就会报缺失libflutter.so的崩溃，我Android不熟，不太明白原因。
+不然libflutter.so就不会打进lib里，原因还没找到。
+
