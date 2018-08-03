@@ -22,7 +22,6 @@
             android:textColor="#e7e7e7"/>
 
         <RadioGroup
-            android:id="@+id/speed_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"

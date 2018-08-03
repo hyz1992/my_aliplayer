@@ -46,9 +46,4 @@ dependencies {
     implementation externalAndroidRecyclerView
     implementation externalGSON
     implementation externalGlide
-
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.8.0'
-    implementation 'com.google.android.exoplayer:exoplayer-hls:2.8.0'
-    implementation 'com.google.android.exoplayer:exoplayer-dash:2.8.0'
-    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.8.0'
 }

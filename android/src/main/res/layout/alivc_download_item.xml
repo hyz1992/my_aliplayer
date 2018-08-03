@@ -18,7 +18,6 @@
         android:background="@drawable/alivc_checkbox_selector"/>
 
     <FrameLayout
-        android:id="@+id/rl_download_video_cover_stats"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="12dp"
         android:layout_width="wrap_content"
@@ -38,7 +37,6 @@
     </FrameLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_video_download_info_stats"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="15dp"

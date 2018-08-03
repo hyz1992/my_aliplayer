@@ -70,7 +70,6 @@
                android:background="@color/alivc_color_gray" />
 
            <TextView
-               android:id="@+id/tv_action_title"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:paddingLeft="5dp"
@@ -97,7 +96,6 @@
             android:layout_height="wrap_content"
             >
             <RadioButton
-                android:id="@+id/rb_speed_normal"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
@@ -108,7 +106,6 @@
                 />
 
             <RadioButton
-                android:id="@+id/rb_speed_onequartern"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
@@ -118,7 +115,6 @@
                 android:textColor="@color/alivc_speed_text_color_blue"
                 />
             <RadioButton
-                android:id="@+id/rb_speed_onehalf"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
@@ -128,7 +124,6 @@
                 android:textColor="@color/alivc_speed_text_color_blue"
                 />
             <RadioButton
-                android:id="@+id/rb_speed_twice"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"

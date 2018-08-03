@@ -5,7 +5,6 @@
     android:background="@color/add_download_info_background">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/check_list_view_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="top|right"
@@ -28,7 +27,6 @@
                 android:background="@color/alivc_color_gray" />
 
             <TextView
-                android:id="@+id/tv_action_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"

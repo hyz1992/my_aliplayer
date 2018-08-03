@@ -32,7 +32,6 @@ public class MyVideoPlayer {
     //媒体信息
     private AliyunMediaInfo mAliyunMediaInfo;
     //整体缓冲进度
-    private int mCurrentBufferPercentage = 0;
     private SurfaceTexture surfaceTexture;
     private Surface surface;
     private Context context;
@@ -43,18 +42,9 @@ public class MyVideoPlayer {
     private NetWatchdog mNetWatchdog;
 
     //对外的各种事件监听
-    private IAliyunVodPlayer.OnInfoListener mOutInfoListener = null;
     private IAliyunVodPlayer.OnErrorListener mOutErrorListener = null;
-    private IAliyunVodPlayer.OnRePlayListener mOutRePlayListener = null;
-    private IAliyunVodPlayer.OnPcmDataListener mOutPcmDataListener = null;
-    private IAliyunVodPlayer.OnAutoPlayListener mOutAutoPlayListener = null;
     private IAliyunVodPlayer.OnPreparedListener mOutPreparedListener = null;
-    private IAliyunVodPlayer.OnCompletionListener mOutCompletionListener = null;
-    private IAliyunVodPlayer.OnSeekCompleteListener mOuterSeekCompleteListener = null;
     private IAliyunVodPlayer.OnChangeQualityListener mOutChangeQualityListener = null;
-    private IAliyunVodPlayer.OnFirstFrameStartListener mOutFirstFrameStartListener = null;
-    private IAliyunVodPlayer.OnTimeExpiredErrorListener mOutTimeExpiredErrorListener = null;
-    private IAliyunVodPlayer.OnUrlTimeExpiredListener mOutUrlTimeExpiredListener = null;
 
     // 连网断网监听
     private NetWatchdog.NetConnectedListener mNetConnectedListener = null;
@@ -101,7 +91,9 @@ public class MyVideoPlayer {
      * @param onInfoListener 信息事件监听
      */
     public void setOnInfoListener(IAliyunVodPlayer.OnInfoListener onInfoListener) {
-        mOutInfoListener = onInfoListener;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnInfoListener(onInfoListener);
+        }
     }
 
     /**
@@ -110,7 +102,9 @@ public class MyVideoPlayer {
      * @param onCompletionListener 播放完成事件监听
      */
     public void setOnCompletionListener(IAliyunVodPlayer.OnCompletionListener onCompletionListener) {
-        mOutCompletionListener = onCompletionListener;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnCompletionListener(onCompletionListener);
+        }
     }
 
     /**
@@ -128,7 +122,9 @@ public class MyVideoPlayer {
      * @param onRePlayListener 重播事件监听
      */
     public void setOnRePlayListener(IAliyunVodPlayer.OnRePlayListener onRePlayListener) {
-        mOutRePlayListener = onRePlayListener;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnRePlayListener(onRePlayListener);
+        }
     }
 
     /**
@@ -137,7 +133,9 @@ public class MyVideoPlayer {
      * @param l 自动播放事件监听
      */
     public void setOnAutoPlayListener(IAliyunVodPlayer.OnAutoPlayListener l) {
-        mOutAutoPlayListener = l;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnAutoPlayListener(l);
+        }
     }
 
     /**
@@ -146,7 +144,9 @@ public class MyVideoPlayer {
      * @param l PCM数据监听
      */
     public void setOnPcmDataListener(IAliyunVodPlayer.OnPcmDataListener l) {
-        mOutPcmDataListener = l;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnPcmDataListener(l);
+        }
     }
 
     /**
@@ -155,7 +155,9 @@ public class MyVideoPlayer {
      * @param l 源超时监听
      */
     public void setOnTimeExpiredErrorListener(IAliyunVodPlayer.OnTimeExpiredErrorListener l) {
-        mOutTimeExpiredErrorListener = l;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnTimeExpiredErrorListener(l);
+        }
     }
 
     /**
@@ -163,7 +165,9 @@ public class MyVideoPlayer {
      * @param listener
      */
     public void setOnUrlTimeExpiredListener(IAliyunVodPlayer.OnUrlTimeExpiredListener listener) {
-        this.mOutUrlTimeExpiredListener = listener;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnUrlTimeExpiredListener(listener);
+        }
     }
 
     /**
@@ -172,7 +176,9 @@ public class MyVideoPlayer {
      * @param onFirstFrameStartListener 首帧显示事件监听
      */
     public void setOnFirstFrameStartListener(IAliyunVodPlayer.OnFirstFrameStartListener onFirstFrameStartListener) {
-        mOutFirstFrameStartListener = onFirstFrameStartListener;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnFirstFrameStartListener(onFirstFrameStartListener);
+        }
     }
 
     /**
@@ -181,7 +187,9 @@ public class MyVideoPlayer {
      * @param onSeekCompleteListener seek结束监听
      */
     public void setOnSeekCompleteListener(IAliyunVodPlayer.OnSeekCompleteListener onSeekCompleteListener) {
-        mOuterSeekCompleteListener = onSeekCompleteListener;
+        if (mAliyunVodPlayer != null) {
+            mAliyunVodPlayer.setOnSeekCompleteListener(onSeekCompleteListener);
+        }
     }
 
     /**
@@ -300,54 +308,7 @@ public class MyVideoPlayer {
             }
             }
         });
-        //请求源过期信息
-        mAliyunVodPlayer.setOnTimeExpiredErrorListener(new IAliyunVodPlayer.OnTimeExpiredErrorListener() {
-            @Override
-            public void onTimeExpiredError() {
-                if (mOutTimeExpiredErrorListener != null) {
-                    mOutTimeExpiredErrorListener.onTimeExpiredError();
-                }
-            }
-        });
-        //播放器加载回调
-        mAliyunVodPlayer.setOnLoadingListener(new IAliyunVodPlayer.OnLoadingListener() {
-            @Override
-            public void onLoadStart() {
 
-            }
-
-            @Override
-            public void onLoadEnd() {
-            }
-
-            @Override
-            public void onLoadProgress(int percent) {
-            }
-        });
-        //播放结束
-        mAliyunVodPlayer.setOnCompletionListener(new IAliyunVodPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion() {
-                if (mOutCompletionListener != null) {
-                    mOutCompletionListener.onCompletion();
-                }
-            }
-        });
-        mAliyunVodPlayer.setOnBufferingUpdateListener(new IAliyunVodPlayer.OnBufferingUpdateListener() {
-            @Override
-            public void onBufferingUpdate(int percent) {
-                mCurrentBufferPercentage = percent;
-            }
-        });
-        //播放信息监听
-        mAliyunVodPlayer.setOnInfoListener(new IAliyunVodPlayer.OnInfoListener() {
-            @Override
-            public void onInfo(int arg0, int arg1) {
-                if (mOutInfoListener != null) {
-                    mOutInfoListener.onInfo(arg0, arg1);
-                }
-            }
-        });
         //切换清晰度结果事件
         mAliyunVodPlayer.setOnChangeQualityListener(new IAliyunVodPlayer.OnChangeQualityListener() {
             @Override
@@ -370,59 +331,8 @@ public class MyVideoPlayer {
                 }
             }
         });
-        //重播监听
-        mAliyunVodPlayer.setOnRePlayListener(new IAliyunVodPlayer.OnRePlayListener() {
-            @Override
-            public void onReplaySuccess() {
-                if (mOutRePlayListener != null) {
-                    mOutRePlayListener.onReplaySuccess();
-                }
-            }
-        });
-        //自动播放
-        mAliyunVodPlayer.setOnAutoPlayListener(new IAliyunVodPlayer.OnAutoPlayListener() {
-            @Override
-            public void onAutoPlayStarted() {
-                if (mOutAutoPlayListener != null) {
-                    mOutAutoPlayListener.onAutoPlayStarted();
-                }
-            }
-        });
-        //seek结束事件
-        mAliyunVodPlayer.setOnSeekCompleteListener(new IAliyunVodPlayer.OnSeekCompleteListener() {
-            @Override
-            public void onSeekComplete() {
-                if (mOuterSeekCompleteListener != null) {
-                    mOuterSeekCompleteListener.onSeekComplete();
-                }
-            }
-        });
-        //PCM原始数据监听
-        mAliyunVodPlayer.setOnPcmDataListener(new IAliyunVodPlayer.OnPcmDataListener() {
-            @Override
-            public void onPcmData(byte[] data, int size) {
-                if (mOutPcmDataListener != null) {
-                    mOutPcmDataListener.onPcmData(data, size);
-                }
-            }
-        });
-        //第一帧显示
-        mAliyunVodPlayer.setOnFirstFrameStartListener(new IAliyunVodPlayer.OnFirstFrameStartListener() {
-            @Override
-            public void onFirstFrameStart() {
-                if (mOutFirstFrameStartListener != null) {
-                    mOutFirstFrameStartListener.onFirstFrameStart();
-                }
-            }
-        });
-        mAliyunVodPlayer.setOnUrlTimeExpiredListener(new IAliyunVodPlayer.OnUrlTimeExpiredListener() {
-            @Override
-            public void onUrlTimeExpired(String vid, String quality) {
-                if (mOutUrlTimeExpiredListener!=null){
-                    mOutUrlTimeExpiredListener.onUrlTimeExpired(vid, quality);
-                }
-            }
-        });
+
+
 
     }
 
@@ -513,6 +423,13 @@ public class MyVideoPlayer {
         }
     }
 
+    public String getTitle(){
+        if(mAliyunMediaInfo==null){
+            return "";
+        }
+        return mAliyunMediaInfo.getTitle();
+    }
+
     /**
      * 获取从源中设置的封面 。
      * 如果用户设置了封面，优先使用用户设置的封面。
@@ -536,20 +453,6 @@ public class MyVideoPlayer {
         }
     }
 
-
-    /**
-     * 获取整体缓冲进度
-     *
-     * @return 整体缓冲进度
-     */
-    public int getBufferPercentage() {
-        if (mAliyunVodPlayer != null) {
-            return mCurrentBufferPercentage;
-        }
-        return 0;
-    }
-
-
     /**
      * 获取视频时长
      *
@@ -561,6 +464,16 @@ public class MyVideoPlayer {
         }
 
         return 0;
+    }
+
+    public void sinkSuccess(Object var1){
+        if(eventSink!=null)
+            eventSink.success(var1);
+    }
+
+    public void sinkError(String var1, String var2, Object var3){
+        if(eventSink!=null)
+            eventSink.error(var1,var2,var3);
     }
 
     public int getVideoWidth(){
@@ -717,29 +630,44 @@ public class MyVideoPlayer {
         }
     }
 
-    public void setCurrentVolume(int progress) {
+    public void setVolume(int progress) {
         int bracketedValue = Math.max(0, Math.min(100, progress));
         mAliyunVodPlayer.setVolume(bracketedValue);
     }
 
-    public int getCurrentVolume() {
+    public int getVolume() {
         return mAliyunVodPlayer.getVolume();
     }
 
-    public void setCurrentScreenBrigtness(int progress) {
+    public void setScreenBrigtness(int progress) {
         mAliyunVodPlayer.setScreenBrightness(progress);
     }
 
-    public int getCurrentScreenBrigtness() {
+    public int getScreenBrigtness() {
         return mAliyunVodPlayer.getScreenBrightness();
+    }
+    public int getBufferingPosition() {
+        return mAliyunVodPlayer.getBufferingPosition();
     }
     void seekTo(int position){
         if (mAliyunVodPlayer == null) {
             return;
         }
+        IAliyunVodPlayer.PlayerState playerState = mAliyunVodPlayer.getPlayerState();
+        if(playerState == IAliyunVodPlayer.PlayerState.Started||playerState == IAliyunVodPlayer.PlayerState.Paused){
+            mAliyunVodPlayer.seekTo(position);
+            mAliyunVodPlayer.start();
+        }else if(playerState == IAliyunVodPlayer.PlayerState.Completed){
+            mAliyunVodPlayer.seekTo(position);
+            mAliyunVodPlayer.replay();
+        }
 
-        mAliyunVodPlayer.seekTo(position);
-        mAliyunVodPlayer.start();
+    }
+    void rePlay(){
+        if (mAliyunVodPlayer == null) {
+            return;
+        }
+        mAliyunVodPlayer.replay();
     }
     /**
      * 设置自动播放
@@ -788,7 +716,7 @@ public class MyVideoPlayer {
     /**
      * 停止播放
      */
-    private void stop() {
+    public void stop() {
         if (mAliyunVodPlayer != null) {
             mAliyunVodPlayer.stop();
         }
