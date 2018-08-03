@@ -1,11 +1,9 @@
 # 功能
 参考官方的video_player插件，集成阿里云视频播放器为flutter插件
 
-![image](https://github.com/hyz1992/my_aliplayer/raw/master/preview/1.png)
-
-
-![](https://github.com/hyz1992/my_aliplayer/raw/master/preview/2.png)
-![](https://github.com/hyz1992/my_aliplayer/raw/master/preview/3.png)
+![image](https://github.com/hyz1992/my_aliplayer/raw/master/preview/1.jpg)
+![image](https://github.com/hyz1992/my_aliplayer/raw/master/preview/2.jpg)
+![image](https://github.com/hyz1992/my_aliplayer/raw/master/preview/3.jpg)
 
 
 ## 注意
