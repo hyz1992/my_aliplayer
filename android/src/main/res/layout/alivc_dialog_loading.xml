@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <ProgressBar
+        android:id="@+id/loading_pbar"
         style="@android:style/Widget.ProgressBar"
         android:layout_width="@dimen/alivc_loading_pbar_height"
         android:layout_height="@dimen/alivc_loading_pbar_height"

@@ -10,6 +10,30 @@
         <item name="android:thumbOffset">@dimen/alivc_info_seekbar_offset</item>
     </style>
 
+    <style name="alivc_info_seekbar_blue" parent="alivc_info_seekbar">
+        <item name="android:progressDrawable">@drawable/alivc_info_seekbar_bg_blue</item>
+        <item name="android:indeterminateDrawable">@drawable/alivc_info_seekbar_bg_blue</item>
+        <item name="android:thumb">@drawable/alivc_seekbar_thumb_blue</item>
+    </style>
+
+    <style name="alivc_info_seekbar_green" parent="alivc_info_seekbar">
+        <item name="android:progressDrawable">@drawable/alivc_info_seekbar_bg_green</item>
+        <item name="android:indeterminateDrawable">@drawable/alivc_info_seekbar_bg_green</item>
+        <item name="android:thumb">@drawable/alivc_info_seekbar_thumb_green</item>
+    </style>
+
+    <style name="alivc_info_seekbar_orange" parent="alivc_info_seekbar">
+        <item name="android:progressDrawable">@drawable/alivc_info_seekbar_bg_orange</item>
+        <item name="android:indeterminateDrawable">@drawable/alivc_info_seekbar_bg_orange</item>
+        <item name="android:thumb">@drawable/alivc_info_seekbar_thumb_orange</item>
+    </style>
+
+    <style name="alivc_info_seekbar_red" parent="alivc_info_seekbar">
+        <item name="android:progressDrawable">@drawable/alivc_info_seekbar_bg_red</item>
+        <item name="android:indeterminateDrawable">@drawable/alivc_info_seekbar_bg_red</item>
+        <item name="android:thumb">@drawable/alivc_info_seekbar_thumb_red</item>
+    </style>
+
     <style name="alivc_info_seekbar_blue_voice" parent="alivc_info_seekbar">
         <item name="android:progressDrawable">@drawable/alivc_info_seekbar_bg_blue</item>
         <item name="android:indeterminateDrawable">@drawable/alivc_info_seekbar_bg_blue</item>
@@ -20,6 +44,20 @@
         <item name="android:progressDrawable">@drawable/alivc_info_seekbar_bg_blue</item>
         <item name="android:indeterminateDrawable">@drawable/alivc_info_seekbar_bg_blue</item>
         <item name="android:thumb">@drawable/alivc_dialog_seek_thumb</item>
+    </style>
+
+    <style name="edit_line_style" parent="@android:style/Widget.EditText">
+        <item name="android:padding">5dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/edit_round_bkg</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="edit_5line_style" parent="edit_line_style">
+        <item name="android:maxLines">5</item>
     </style>
 
     <style name="btn_style" parent="@android:style/Widget.Button.Small">
@@ -38,6 +76,14 @@
         <item name="android:indeterminateOnly">false</item>
     </style>
 
+    <style name="NoActionTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
     <style name="addDownloadDialog" parent="android:Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -45,6 +91,19 @@
         <!-- 为了避免在有 NavigationBar 的手机上 Dialog 从 NavigationBar 底部上来。去掉 Dialog 的动画，使用 View 的动画。-->
         <item name="android:layout_width">match_parent</item>
         <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="AlivcDialog.Dialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
     <style name="BottomCheckDialog" parent="android:Theme.Dialog">
@@ -55,4 +114,7 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+    <style name="barrage_switch_text_color" parent="@android:style/TextAppearance.Small">\
+        <item name="android:textColor">@android:color/black</item>
+    </style>
 </resources>

@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/empty_view_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -13,6 +14,7 @@
         />
 
     <TextView
+        android:id="@+id/empty_view_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -22,6 +24,7 @@
         android:textSize="16sp" />
 
     <TextView
+        android:id="@+id/empty_view_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

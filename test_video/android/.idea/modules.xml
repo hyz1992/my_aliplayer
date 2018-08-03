@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../android/my_aliplayer.iml" filepath="$PROJECT_DIR$/../../android/my_aliplayer.iml" />
-      <module fileurl="file://G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider-0.4.1/android/path_provider.iml" filepath="G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider-0.4.1/android/path_provider.iml" />
-      <module fileurl="file://G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.4.2/android/shared_preferences.iml" filepath="G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.4.2/android/shared_preferences.iml" />
+      <module fileurl="file://D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider-0.4.1/android/path_provider.iml" filepath="D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider-0.4.1/android/path_provider.iml" />
+      <module fileurl="file://D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.4.2/android/shared_preferences.iml" filepath="D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.4.2/android/shared_preferences.iml" />
     </modules>
   </component>
 </project>
