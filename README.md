@@ -12,11 +12,9 @@
 
 ## 注意
 目前只有Android端。
-调试android时，打开test_video\android\app\build.grade的
-ndk{
-	abiFilters 'armeabi-v7a'
+工程的build.grade 要加上
+android {
+    packagingOptions {
+        exclude '/lib/arm64-v8a/**'
+    }
 }
-调试dart时，注释该代码。
-
-不然libflutter.so就不会打进lib里，原因还没找到。
-
